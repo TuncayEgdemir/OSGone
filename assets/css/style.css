@@ -189,6 +189,57 @@ a:hover {
   color: #4A87AB;
   margin: 10px 10px 15px 10px; /* Daha az boşluk bırakıyoruz */
 }
+@media (max-width: 768px) {
+  .services-container {
+    flex-direction: column; /* Kartları alt alta dizer */
+    gap: 15px; /* Kartlar arasındaki boşluğu azaltır */
+    padding: 10px; /* Daha dar bir padding kullanır */
+  }
+
+  .service-box {
+    flex: 1 1 100%; /* Kartları tam genişlikte gösterir */
+    max-width: 100%; /* Genişlik sınırlamasını kaldırır */
+  }
+
+  .image-container img {
+    height: auto; /* Resmin yüksekliğini içeriğe göre ayarlar */
+  }
+
+  .title-overlay {
+    font-size: 12px; /* Başlık boyutunu küçültür */
+    padding: 5px; /* Daha dar padding kullanır */
+  }
+
+  .title-overlay button {
+    font-size: 10px; /* Daha küçük buton yazısı */
+    padding: 6px 15px; /* Buton boyutunu küçültür */
+  }
+
+  .service-box p {
+    font-size: 14px; /* Metin boyutunu optimize eder */
+    margin: 8px 10px; /* Kenar boşluklarını daraltır */
+  }
+}
+
+@media (max-width: 480px) {
+  .services-container {
+    padding: 5px; /* Daha da dar padding */
+  }
+
+  .title-overlay {
+    font-size: 10px; /* Daha küçük başlık boyutu */
+  }
+
+  .title-overlay button {
+    font-size: 9px; /* Daha küçük buton yazısı */
+    padding: 5px 10px; /* Daha küçük buton boyutu */
+  }
+
+  .service-box p {
+    font-size: 13px; /* Küçük ekranlar için metin boyutunu azaltır */
+  }
+}
+
 /* Genel Stil */
 .gemi {
   width: 100%;
@@ -221,6 +272,9 @@ a:hover {
 .gemi-overlay {
   position: relative;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gemi-overlay img {
@@ -231,26 +285,162 @@ a:hover {
 
 .gemi-text {
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   top: 50%; /* Dikey merkezleme */
-  left : 15%; /* Yatay merkezleme */
+  left : 14%; /* Yatay merkezleme */
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.2); /* Yazının arkasına yarı saydam arka plan */
-  padding: 20px;
+  padding: 10px;
   border-radius: 8px;
-  max-width: 20%; /* Yazı genişliğini kontrol et */
+  max-width: 25%; /* Yazı genişliğini kontrol et */
 }
 
 .gemi-text h4 {
   font-size: 18px;
-  margin-bottom: 10px;
+  color: black;
   font-weight: bold;
+  margin-top: 4px
 }
-
+.title-header{
+  margin-bottom: 10px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 30px;
+}
 .gemi-text p {
+  text-align: left;
   font-size: 14px;
   line-height: 1.6;
+}
+
+.popular {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+.popular-content {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+}
+
+.popular-overlay {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popular-overlay img {
+  width: 100%;
+  height: auto;
+  min-height: 100px;
+  display: block;
+}
+.popular button{
+  position: absolute;
+  top: 40%;
+  right: 10%;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.popular-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 50%; /* Dikey merkezleme */
+  left : 14%; /* Yatay merkezleme */
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  padding:50px;
+  border-radius: 8px;
+  max-width: 25%; /* Yazı genişliğini kontrol et */
+}
+
+.popular-text h4 {
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+  margin-top: 4px
+}
+.title-header{
+  margin-bottom: 10px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 30px;
+}
+.popular-text p {
+  text-align: left;
+  font-size: 24px;
+  line-height: 1.6;
+}
+
+
+@media (max-width: 768px) {
+  .popular-text {
+    font-size: 12px;
+    max-width: 90%;
+    padding: 15px;
+    margin-left: 30px;
+  }
+
+  .popular-text h4 {
+    font-size: 16px;
+  }
+
+  .popular-text p {
+    font-size: 12px;
+  }
+  .popular button {
+    padding: 5px 10px;
+  top: 30%;
+
+  }
+}
+
+/* Mobil Cihazlar için */
+@media (max-width: 480px) {
+  .popular-text {
+    font-size: 10px;
+    max-width: 95%;
+    padding: 10px;
+  }
+  .popular button {
+  top: 30%;
+    padding: 5px 10px;
+  }
+
+  .popular-text h4 {
+    font-size: 14px;
+  }
+
+  .popular-text p {
+    font-size: 10px;
+  }
 }
 
 /* Responsive Tasarım */
@@ -287,6 +477,33 @@ a:hover {
     font-size: 10px;
   }
 }
+.contact {
+  width: 100%;
+  height: 300px; /* Yükseklik ayarlandı */
+  background: url('/assets/imgs/services/contact.png') no-repeat center center; /* Arka plan resmi */
+  background-size: cover; /* Resmi kapsayacak şekilde boyutlandır */
+  display: flex;
+  justify-content: center; /* Yatay merkezleme */
+  align-items: center; /* Dikey merkezleme */
+  text-align: center;
+}
+
+.contact button {
+  font-size: 20px; /* Buton yazı boyutu */
+  color: #003366; /* Yazı rengi */
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.8); /* Beyaz şeffaf arka plan */
+  padding: 10px 20px; /* İçerik boşluğu */
+  border-radius: 5px; /* Köşe yuvarlama */
+  border: none; /* Kenarlık kaldırıldı */
+  cursor: pointer; /* Butona imleç ekle */
+  transition: background 0.3s ease; /* Hover efekti için geçiş ekle */
+}
+
+.contact button:hover {
+  background: rgba(255, 255, 255, 1); /* Hover durumunda arka plan rengi */
+}
+
 
 .service-box:hover {
   transform: scale(1.05);
@@ -446,7 +663,6 @@ nav.nav-bg .black-logo {
 
 /* ---------------------------------------------------------------------- INNER BANNER STYLE  STARTS ------------------ */
 section {
-  padding-top: 120px;
   padding-bottom: 120px;
 }
 
@@ -1813,9 +2029,7 @@ box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.325);
   font-size: 18px;
   font-weight: 400;
 }
-.clients {
-  padding: 40px 0;
-}
+
 
 .herotext {
   margin-bottom: 20px;
@@ -1827,11 +2041,19 @@ box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.325);
   text-transform: uppercase;
   font-weight: bold;
 }
-
+.clients{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center ;
+  justify-content: center;
+}
 .client-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px; 
 
 }
 
@@ -1841,7 +2063,7 @@ box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.325);
   padding: 40px;
   border : 1px solid rgb(245, 237, 237) ;
   transition: transform 0.3s;
-  max-width: 500px;
+  width: 500px;
   align-items: center;
   justify-content: center;
 }
@@ -1883,6 +2105,34 @@ box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.325);
   line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+  .client-container {
+    grid-template-columns: 2fr; /* Tek sütuna düşürür */
+    gap: 10px; /* Aralarındaki boşluğu küçültür */
+  }
+
+  .client-card {
+    max-width: 100%; /* Kartların genişliğini mobil ekrana göre ayarlar */
+    padding: 20px; /* Mobilde daha kompakt bir görünüm için padding küçültülebilir */
+  }
+  
+  .client-card h1 {
+    font-size: 18px; /* Daha küçük başlık boyutu */
+  }
+
+  .client-card h3 {
+    font-size: 14px; /* Daha küçük alt başlık boyutu */
+  }
+
+  .client-card p {
+    font-size: 12px; /* Daha küçük metin boyutu */
+  }
+
+  .circle {
+    width: 40px; /* Mobil için daha küçük daire */
+    height: 40px;
+  }
+}
 
 .video {
   padding-top: 250px;
